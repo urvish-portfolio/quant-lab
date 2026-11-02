@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Urvishkumar Badreshiya: systematic trading research, tested to break. Portfolio for the Associate, Systematic Trading Strategies role in Dubai.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23113357'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' text-anchor='middle' fill='%23FAD47E'%3EUB%3C/text%3E%3C/svg%3E">
+<title>Urvishkumar Badreshiya Research Log</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a research log read top to bottom, organised around a five-gate pipeline (hypothesis to live). Single dark navy theme, matched to the employer's own site. */
+:root{
+  --bg:#0D2744; --surface:#113357; --surface-2:#153F6B; --line:#1F5D9E; --line-soft:#18477A;
+  --text:#FFFFFF; --muted:#CFDCEC; --dim:#B4C3D8;
+  --azure:#77BEFF; --azure-2:#A5D2FF; --gold:#FAD47E; --kill:#E89079; --ok:#7FD9B0;
+  --f-head:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --f-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r:14px; --r-sm:10px; --maxw:1120px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--azure-2);text-underline-offset:3px}
+a:hover{color:var(--text)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-head);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.15}
+h3{font-size:1.18rem;line-height:1.3}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.lede{color:var(--muted);font-size:1.08rem;max-width:64ch}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+section{padding-block:clamp(48px,7vw,88px)}
+section+section{border-top:1px solid var(--line-soft)}
+.sec-head{display:grid;gap:12px;margin-bottom:32px;max-width:72ch}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(13,39,68,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.name{font-family:var(--f-head);font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top nav{display:flex;gap:18px;font-size:.86rem}
+.top nav a{color:var(--dim);text-decoration:none}
+.top nav a:hover{color:var(--text)}
+@media (max-width:720px){.top nav{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,84px) clamp(36px,5vw,64px)}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.06;max-width:17ch;margin:14px 0 20px}
+.hero h1 em{font-style:normal;color:var(--azure)}
+.contact{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:.92rem;color:var(--dim)}
+.contact span{user-select:all}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:18px;display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;min-width:0}
+.ring{width:64px;height:64px}
+.ring circle{fill:none;stroke-width:6}
+.ring .track{stroke:var(--line-soft)}
+.ring .fill{stroke:var(--azure);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+.ring.kill .fill{stroke:var(--kill)}
+.ring.gold .fill{stroke:var(--gold)}
+.stat b{display:block;font-family:var(--f-mono);font-size:1.45rem;font-weight:600;line-height:1.1}
+.stat small{display:block;color:var(--dim);font-size:.82rem;line-height:1.4;margin-top:4px}
+
+/* pipeline */
+.pipe{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:clamp(16px,3vw,28px);overflow-x:auto}
+.pipe-grid{display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(300px,2fr);gap:0 24px;min-width:560px}
+.gates{display:grid;grid-template-columns:repeat(5,1fr);font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-bottom:10px;border-bottom:1px solid var(--line-soft)}
+.gates span{text-align:center}
+.pipe-label{padding:14px 0;border-bottom:1px solid var(--line-soft);display:grid;gap:4px;align-content:center}
+.pipe-label a{color:var(--text);text-decoration:none;font-weight:600;font-size:.95rem}
+.pipe-label a:hover{color:var(--azure-2)}
+.pipe-label small{color:var(--dim);font-size:.8rem}
+.track{position:relative;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:repeat(5,1fr);align-items:center;min-height:64px}
+.track .rail{position:absolute;left:10%;right:10%;top:50%;height:2px;background:var(--line-soft);transform:translateY(-50%)}
+.track .run{position:absolute;left:10%;top:50%;height:2px;transform-origin:left center;transform:translateY(-50%)}
+.track i{justify-self:center;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--line);position:relative;z-index:1}
+.track i.on{background:var(--azure);border-color:var(--azure)}
+.track i.stop{width:18px;height:18px;border-width:3px;background:var(--bg)}
+.track.ok .run,.track.ok i.on{background:var(--azure)} .track.ok i.stop{border-color:var(--ok);background:var(--ok)}
+.track.open .run,.track.open i.on{background:var(--azure)} .track.open i.stop{border-color:var(--gold);background:var(--gold)}
+.track.kill .run,.track.kill i.on{background:var(--dim);border-color:var(--dim)} .track.kill i.stop{border-color:var(--kill);background:var(--kill)}
+@media (max-width:640px){
+  .pipe-grid{grid-template-columns:1fr;min-width:0}
+  .pipe-grid>div:first-child{display:none}
+  .pipe-label{border-bottom:0;padding:14px 0 0}
+  .gates{font-size:.56rem;letter-spacing:.04em}
+  .track{min-height:44px}
+}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:.84rem;color:var(--dim)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+
+/* route */
+.route{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:860px){.route{grid-template-columns:1fr}.route-card{display:none}}
+.route-steps{display:grid;gap:30px}
+.route-step{display:grid;gap:8px;padding-left:20px;border-left:2px solid var(--line-soft);transition:border-color .3s cubic-bezier(.22,1,.36,1)}
+.route-step.active{border-left-color:var(--gold)}
+.route-step .eyebrow{color:var(--dim)}
+.route-step.active .eyebrow{color:var(--gold)}
+.route-step p{color:var(--muted);max-width:62ch}
+.route-card{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:22px}
+.route-card ol{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+.route-card li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:center;color:var(--dim);font-size:.9rem;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.route-card li::before{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--line);transition:background .3s,border-color .3s}
+.route-card li.lit{color:var(--text)}
+.route-card li.lit::before{background:var(--gold);border-color:var(--gold)}
+
+/* cases */
+.cases{display:grid;gap:28px}
+.case{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:clamp(18px,3vw,32px);display:grid;gap:22px;scroll-margin-top:80px}
+.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;align-items:baseline}
+.tag{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.tag.ok{color:var(--ok)} .tag.open{color:var(--gold)} .tag.kill{color:var(--kill)}
+.q{font-size:1.06rem;color:var(--muted);max-width:68ch}
+.case-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+@media (max-width:860px){.case-body{grid-template-columns:1fr}}
+.case-body h4{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 8px;font-weight:600}
+.case-body p,.case-body li{color:var(--muted);font-size:.95rem}
+.case-body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.fig{background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-sm);padding:12px 14px;min-width:0}
+.fig b{display:block;font-family:var(--f-mono);font-size:1.2rem;font-weight:600;font-variant-numeric:tabular-nums}
+.fig span{display:block;font-size:.78rem;color:var(--dim);line-height:1.35;margin-top:2px}
+.call{border-left:3px solid var(--gold);padding:10px 0 10px 16px;color:var(--text);font-size:.98rem}
+.call b{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figure .chart{width:100%;overflow-x:auto}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-size:.8rem;color:var(--dim);line-height:1.45}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:var(--r-sm);border:1px solid var(--line);color:var(--text);text-decoration:none;font-size:.88rem;transition:background .2s cubic-bezier(.22,1,.36,1),border-color .2s}
+.btn:hover{background:var(--surface-2);border-color:var(--azure)}
+.killed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.killed{grid-template-columns:1fr}}
+.killed article{background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-sm);padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.killed h3{font-size:1rem}
+.killed p{color:var(--muted);font-size:.9rem}
+
+/* two-column cards */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:clamp(18px,3vw,26px);display:grid;gap:12px;align-content:start;min-width:0}
+.panel p{color:var(--muted);font-size:.95rem}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.trio{grid-template-columns:1fr}}
+
+/* brief table */
+.tbl{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--r)}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:.93rem}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;background:var(--surface)}
+td:first-child{color:var(--text);width:38%}
+td{color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td .tag{margin-left:0}
+
+/* habits */
+.habits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.habits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.habits{grid-template-columns:1fr}}
+.habit{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:20px;display:grid;gap:10px;align-content:start;transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s,background .25s}
+.habit h3{font-size:1rem}
+.habit p{color:var(--dim);font-size:.9rem;transition:color .25s}
+.habit:hover{transform:translateY(-3px);border-color:var(--azure);background:var(--surface-2)}
+.habit:hover p{color:var(--text)}
+.habit .k{font-family:var(--f-mono);font-size:.7rem;color:var(--gold);letter-spacing:.1em}
+
+/* plan */
+.plan{display:grid;gap:18px}
+.plan-bar{position:relative;height:8px;border-radius:999px;background:var(--line-soft);overflow:hidden}
+.plan-bar span{position:absolute;inset:0;background:linear-gradient(90deg,var(--azure),var(--gold));transform-origin:left center}
+.plan-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.plan-cols{grid-template-columns:1fr}}
+.plan-cols div{display:grid;gap:6px}
+.plan-cols p{color:var(--muted);font-size:.95rem}
+
+/* tools */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.85rem;padding:6px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line-soft);color:var(--muted)}
+.quals{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.quals li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line-soft);padding-bottom:10px}
+.quals li:last-child{border-bottom:0}
+.quals b{color:var(--text);font-weight:600}
+.quals span{font-family:var(--f-mono);font-size:.82rem;color:var(--dim);text-align:right}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:820px}
+details{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--f-head);font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-mono);color:var(--gold);transition:transform .25s cubic-bezier(.22,1,.36,1)}
+details[open] summary::after{transform:rotate(45deg)}
+details .ans{padding:0 0 20px;color:var(--muted);display:grid;gap:10px;font-size:.96rem}
+details .ans ul{margin:0;padding-left:18px;display:grid;gap:6px}
+
+.wrap p.eyebrow{font-size:.74rem;color:var(--gold);max-width:none}
+.route-step p.eyebrow{color:var(--dim)}
+.route-step.active p.eyebrow{color:var(--gold)}
+.close{text-align:left}
+.close h2{max-width:24ch}
+.foot{border-top:1px solid var(--line-soft);padding-block:26px;color:var(--dim);font-size:.82rem}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="name">Urvishkumar Badreshiya</div>
+    <nav aria-label="Sections">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#studies">Studies</a>
+      <a href="#brief">Brief</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Associate, Systematic Trading Strategies · Dubai</p>
+    <h1>Every idea has to survive a test built to <em>break it.</em></h1>
+    <p class="lede">Eight years in operations taught me to trust a number only after it survives a hard look. Since 2023 the same habit has run my trading research. Each idea meets a random benchmark, data it has never seen, and a count of how many versions were tried. Most ideas die there. This page shows the ones that lived, the ones that didn't, and why.</p>
+    <div class="contact">
+      <span>urvish.mb@gmail.com</span>
+      <span>+91 99988 28555</span>
+      <a href="https://www.linkedin.com/in/urvishkumar-badreshiya" target="_blank" rel="noopener">linkedin.com/in/urvishkumar-badreshiya</a>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="fill" cx="32" cy="32" r="27" data-frac="0.995"/></svg>
+        <div><b class="num" data-count="140">140</b><small>versions of one trend rule, judged against the luckiest of them (p = 0.0055)</small></div>
+      </div>
+      <div class="stat">
+        <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="fill" cx="32" cy="32" r="27" data-frac="1"/></svg>
+        <div><b class="num">0 / <span data-count="500">500</span></b><small>random-timing copies that beat that rule</small></div>
+      </div>
+      <div class="stat">
+        <svg class="ring kill" viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="fill" cx="32" cy="32" r="27" data-frac="1"/></svg>
+        <div><b class="num">~<span data-count="5400">5,400</span></b><small>candle setups searched in one study. None survived trading costs</small></div>
+      </div>
+      <div class="stat">
+        <svg class="ring gold" viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="fill" cx="32" cy="32" r="27" data-frac="0.93"/></svg>
+        <div><b class="num" data-count="93">93</b><small>live trades on a prop-challenge account, compared trade by trade with 100 backtest trades</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The pipeline</p>
+      <h2>Where each study stopped</h2>
+      <p class="lede">Every study follows the same five gates, from the first idea to live trading. The large dot marks the gate where it stopped, and why.</p>
+    </div>
+    <div class="pipe" role="table" aria-label="Research pipeline: how far each study progressed">
+      <div class="pipe-grid">
+        <div></div>
+        <div class="gates" role="row"><span>Idea</span><span>Data</span><span>Backtest</span><span>Validation</span><span>Live</span></div>
+        <div id="pipe-rows" style="display:contents"></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--ok)"></i>Passed its tests</span>
+      <span><i style="background:var(--gold)"></i>Still unproven</span>
+      <span><i style="background:var(--kill)"></i>Killed</span>
+    </div>
+  </div>
+</section>
+
+<section id="route">
+  <div class="wrap route">
+    <div>
+      <div class="sec-head">
+        <p class="eyebrow">Route so far</p>
+        <h2>From the factory floor to the research desk</h2>
+      </div>
+      <div class="route-steps">
+        <div class="route-step" data-step="0">
+          <p class="eyebrow">2014 to 2018 · Gujarat</p>
+          <h3>Mechanical engineering</h3>
+          <p>An engineering degree came with a habit that never left: ask what a number is made of before using it. Tolerances, measurement error and operations research were the first quantitative tools.</p>
+        </div>
+        <div class="route-step" data-step="1">
+          <p class="eyebrow">2018 to 2021 · Gujarat</p>
+          <h3>Running a factory's operations</h3>
+          <p>At a manufacturer of spinning rings for the textile industry, production planning, procurement and weekly performance reporting were mine. The reports decided what the owners did next, so they had to be right.</p>
+        </div>
+        <div class="route-step" data-step="2">
+          <p class="eyebrow">2022 to 2023 · Birmingham</p>
+          <h3>MBA at Aston University</h3>
+          <p>Coursework included reading a company's statements against industry averages and a five-year cash-flow appraisal of a new product line. The operations simulation finished at 100% in all five modules.</p>
+        </div>
+        <div class="route-step" data-step="3">
+          <p class="eyebrow">2022 to 2025 · UK</p>
+          <h3>Restaurant operations at volume</h3>
+          <p>Greggs, a new bakery brand launch, then the opening team of a Shake Shack. Every week brought a forecast to set, a labour number to defend and a stock variance to explain to an area manager.</p>
+        </div>
+        <div class="route-step" data-step="4">
+          <p class="eyebrow">2023 to now</p>
+          <h3>Systematic trading research</h3>
+          <p>Trading came in 2023. Testing came soon after, once it was clear how easily a backtest flatters its author. The studies below are the result: designed, run and decided by me, and written up for readers without a quant background.</p>
+        </div>
+        <div class="route-step" data-step="5">
+          <p class="eyebrow">Next · Dubai</p>
+          <h3>One research agenda, owned end to end</h3>
+          <p>A role that carries a strategy from hypothesis to live capital, reporting to the person who makes the decision, is the loop these studies have been practising.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="route-card" aria-label="Route so far">
+      <p class="eyebrow">Route so far</p>
+      <ol id="route-list">
+        <li>Engineering degree</li>
+        <li>Factory operations</li>
+        <li>MBA, Aston</li>
+        <li>UK restaurant operations</li>
+        <li>Trading research</li>
+        <li>Dubai</li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<section id="studies">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Studies</p>
+      <h2>Five studies and three ideas that didn't make it</h2>
+      <p class="lede">Each study starts with a question, fixes the test before the data is opened where possible, and ends with a call. Numbers are as measured, including the ones that hurt the idea.</p>
+    </div>
+    <div class="cases">
+
+      <article class="case" id="s-ibs">
+        <div class="case-head"><div><p class="eyebrow">US equities · 2000 to 2026</p><h3>A short-term reversal in US stocks, tested on sealed data</h3></div><span class="tag open">Validation: narrow pass</span></div>
+        <p class="q">Does a well-known reversal effect in US index ETFs still pay after costs on data that was never looked at?</p>
+        <div class="case-body">
+          <div style="display:grid;gap:18px">
+            <div><h4>The test, fixed in advance</h4><ul>
+              <li>Buy the close when an ETF finishes in the bottom fifth of its daily range. Sell at the next close. 2 bp of cost on each side.</li>
+              <li>Built on 2000 to 2015. The 2016 to 2026 data was opened once.</li>
+              <li>SPY first, then QQQ, IWM and DIA with identical settings.</li>
+              <li>Pass bar: beat 1,000 random-timing copies at p &lt; 0.05 after costs.</li>
+            </ul></div>
+            <div class="figs">
+              <div class="fig"><b>+10.1 bp</b><span>SPY per trade, 2016 to 2026, after costs</span></div>
+              <div class="fig"><b>p = 0.041</b><span>against 1,000 random-timing copies</span></div>
+              <div class="fig"><b>+13.0 bp</b><span>the same rule in training: weaker out of sample</span></div>
+              <div class="fig"><b>p = 0.24</b><span>SPY without 2020, a check added after the verdict</span></div>
+            </div>
+          </div>
+          <div style="display:grid;gap:18px">
+            <figure><div class="chart" id="ch-ibs"></div><figcaption>SPY, average return per trade by year after costs, sealed period. 2020 carries a large share of the result.</figcaption></figure>
+            <p style="color:var(--muted);font-size:.92rem">QQQ passed clearly (p = 0.001) and held without 2020 (+18.4 bp, p = 0.004). IWM and DIA missed the bar (p = 0.066). ETFs were chosen deliberately: free stock-level data only keeps the companies that survived, which flatters any reversal test.</p>
+          </div>
+        </div>
+        <p class="call"><b>The call</b>SPY passed the bar written in advance, but the pass rests on one volatile year, so it would not be traded. QQQ is the only version worth a forward test.</p>
+      </article>
+
+      <article class="case" id="s-trend">
+        <div class="case-head"><div><p class="eyebrow">Bitcoin · daily · 2013 to 2026</p><h3>A two-average trend rule against the luckiest of 140 tries</h3></div><span class="tag ok">Validated</span></div>
+        <p class="q">Is a simple Bitcoin trend rule real, or just the best of many settings that happened to fit the past?</p>
+        <div class="case-body">
+          <div style="display:grid;gap:18px">
+            <div><h4>Fixed before the search</h4><ul>
+              <li>140 versions in a grid (fast and slow averages, exit and direction modes), searched on 2018 to 2026.</li>
+              <li>Scoring metric chosen first: Sharpe ratio, so the winner could not be whichever took the most risk.</li>
+              <li>Sealed: Bitcoin 2013 to 2017 from a different exchange, and five other coins, one look each.</li>
+              <li>All 48 possible daily start times tested first. Every one was profitable, so the session was chosen for practicality.</li>
+            </ul></div>
+            <div class="links"><a class="btn" href="https://urvish-portfolio.github.io/quant-lab/trend-rule-report.pdf" target="_blank" rel="noopener">Full report (PDF) ↗</a></div>
+          </div>
+          <div class="figs">
+            <div class="fig"><b>p = 0.0055</b><span>White's Reality Check: luck alone beat it in fewer than 6 of 1,000 searches</span></div>
+            <div class="fig"><b>0 of 500</b><span>random-timing copies beat the rule (median $16.5k vs $338.5k from $10k)</span></div>
+            <div class="fig"><b>1.31 → 1.00</b><span>Sharpe, in sample to the out-of-sample average</span></div>
+            <div class="fig"><b>4 of 5</b><span>other coins beat buy-and-hold. XRP failed in a sideways market</span></div>
+            <div class="fig"><b>−44%</b><span>1-in-20 drawdown across 5,000 reshuffles of the same trades</span></div>
+            <div class="fig"><b>9.2×</b><span>average winner to average loser, at a 30% win rate</span></div>
+          </div>
+        </div>
+        <p class="call"><b>The call</b>Trend-following itself is the real effect here, and the exact settings are noise, since every one of the 140 versions made money. Size it for the −44% drawdown, not the backtest's −46.7% single path.</p>
+      </article>
+
+      <article class="case" id="s-stop">
+        <div class="case-head"><div><p class="eyebrow">Bitcoin · daily · 2018 to 2026</p><h3>What a stop-loss does to a trend system</h3></div><span class="tag ok">Finding recorded</span></div>
+        <p class="q">If only the stop moves, how much of a trend system's return does a tight stop give away?</p>
+        <div class="case-body">
+          <div style="display:grid;gap:18px">
+            <div><h4>One variable</h4><ul>
+              <li>One system: a 20/50-day crossover. The 36 entries were frozen across every version.</li>
+              <li>500 stop levels from 0.5% to 25%, plus a no-stop control.</li>
+              <li>Limits written into the report: no fees, one market, gaps through a stop not modelled.</li>
+            </ul></div>
+            <div class="figs">
+              <div class="fig"><b>+325%</b><span>with a 2% stop</span></div>
+              <div class="fig"><b>+648%</b><span>with no stop at all</span></div>
+              <div class="fig"><b>22 of 31</b><span>trades stopped at 2% were back above the stop within 3 days</span></div>
+            </div>
+            <div class="links"><a class="btn" href="https://urvish-portfolio.github.io/quant-lab/stop-loss-report.pdf" target="_blank" rel="noopener">Full report (PDF) ↗</a></div>
+          </div>
+          <figure><div class="chart" id="ch-stop"></div><figcaption>Total return by stop distance (log scale), all 500 versions. The red band between 1.24% and 1.92% lost money. The best level, 7.8%, is partly selection and is reported as such.</figcaption></figure>
+        </div>
+        <p class="call"><b>The call</b>On a volatile asset, a tight stop mostly cuts trades that would have recovered. Stop distance belongs in the test design, never a default.</p>
+      </article>
+
+      <article class="case" id="s-obfvg">
+        <div class="case-head"><div><p class="eyebrow">Crypto futures · 2021 to 2026</p><h3>A hand-traded strategy, backtest against live</h3></div><span class="tag open">Live: unproven</span></div>
+        <p class="q">Does the live record match the backtest, and does anything beyond the entry explain the winners?</p>
+        <div class="case-body">
+          <div style="display:grid;gap:18px">
+            <div><h4>What was measured</h4><ul>
+              <li>100 backtest trades, then 93 live trades on a prop-challenge account, April to August 2026.</li>
+              <li>Entries compared with random entries on the same days, then replicated on two held-out sets.</li>
+              <li>62 candidate filters tested, with correction for multiple testing. A 19-feature model asked to predict winners.</li>
+            </ul></div>
+            <figure><div class="chart" id="ch-ci"></div><figcaption>Expectancy per trade in R (risk units). Live interval is 95%; it still contains the backtest figure.</figcaption></figure>
+          </div>
+          <div style="display:grid;gap:18px">
+            <div class="figs">
+              <div class="fig"><b>+0.72R</b><span>per trade from the real entries vs −0.10R from random ones (p ≈ 0.0003)</span></div>
+              <div class="fig"><b>3 of 62</b><span>filters looked useful: what chance alone produces</span></div>
+              <div class="fig"><b>0.52–0.56</b><span>model AUC: winners could not be predicted out of sample</span></div>
+            </div>
+            <div><h4>A bug found in my own data</h4><p>A day-colour tag I had logged on every trade turned out to describe the finished day, not the day at the moment of entry. The at-entry version had no effect. It was look-ahead bias in a field I had written myself.</p></div>
+          </div>
+        </div>
+        <p class="call"><b>The call</b>The entry edge is likely real. No filter earned a place in the rules. It stays unproven until about 100 fresh trades on unseen data.</p>
+      </article>
+
+      <article class="case" id="s-gold">
+        <div class="case-head"><div><p class="eyebrow">Gold · 5-minute · May 2025 to Jan 2026</p><h3>189 trades of a published strategy, after costs</h3></div><span class="tag open">Validation: regime risk</span></div>
+        <p class="q">A gold strategy watched 430,000 times on YouTube (by Anish Singh Thakur): what is it worth once costs and luck are taken out?</p>
+        <div class="case-body">
+          <div style="display:grid;gap:18px">
+            <figure><div class="chart" id="ch-gold"></div><figcaption>The same 189 trades, same entries and exits, under two cost models. Bybit costs took 45% of the gross result.</figcaption></figure>
+            <div><h4>Method</h4><ul>
+              <li>189 trades taken by hand on chart replay, with my own session window and targets.</li>
+              <li>Costs rebuilt from each venue's published fee schedule; 10,000 reshuffles of the trade order.</li>
+              <li>A mechanical version of the rules coded and run on the same period.</li>
+            </ul></div>
+          </div>
+          <div class="figs" style="align-content:start">
+            <div class="fig"><b>82R</b><span>the gap between venues on identical trades</span></div>
+            <div class="fig"><b>9 losses</b><span>in a row: the median worst streak across 10,000 reshuffles, so normal</span></div>
+            <div class="fig"><b>t = 1.67</b><span>for "Mondays made double": one slice of eight, so noise</span></div>
+            <div class="fig"><b>40%</b><span>of the gross result came from the 10 best trades</span></div>
+            <div class="fig"><b>4 of 189</b><span>hand entries matched by the coded rule, which lost money</span></div>
+            <div class="fig"><b>+45%</b><span>gold's own rise over the test window</span></div>
+          </div>
+        </div>
+        <p class="call"><b>The call</b>Too strong to be chance, but unproven: one bull regime, and the edge sits in judgement the rules don't yet capture. The next step is a written take-or-skip rule, frozen, then a forward test.</p>
+      </article>
+
+      <article class="case" id="s-killed">
+        <div class="case-head"><div><p class="eyebrow">Killed at backtest</p><h3>Three ideas the data rejected</h3></div><span class="tag kill">Killed</span></div>
+        <div class="killed">
+          <article>
+            <p class="eyebrow" style="color:var(--kill)">Candle patterns · BCH</p>
+            <h3>A candle that predicts the next move</h3>
+            <p>About 5,400 one- and two-feature setups on two years of 1, 5 and 15-minute futures data, with a 70/30 time split. The best setup won 38% of trades on unseen data against 43.7% needed after fees. None was profitable even in training.</p>
+            <p>In high volatility, moves the other way were just as common (7.7% against 7.8%). The only signal was volatility itself.</p>
+          </article>
+          <article>
+            <p class="eyebrow" style="color:var(--kill)">Trend pullback · BCH</p>
+            <h3>Rejections from the 200 EMA</h3>
+            <p>4,400 trades in a year with a profit factor of 0.61. Re-fitting the best settings separately for each year from 2020 to 2026 picked long in some years and short in others, with three stop sizes and four targets.</p>
+            <p>No setting stayed best for two years running, so there was nothing stable to trade.</p>
+          </article>
+          <article>
+            <p class="eyebrow" style="color:var(--kill)">Value-area levels · BCH</p>
+            <h3>Third of three</h3>
+            <p>Run side by side with two other strategies on the same market for 30 trades each. It made money (+20.7R) and still ranked last.</p>
+            <p>Research time went to the two stronger candidates instead.</p>
+          </article>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Systems</p>
+      <h2>Taken past the spreadsheet</h2>
+    </div>
+    <div class="duo">
+      <div class="panel">
+        <p class="eyebrow">Automated execution</p>
+        <h3>Four trading bots, run live</h3>
+        <p>Three classic public systems, a Donchian breakout, an 18-period moving average and RSI mean reversion, set to my own rules. The fourth automated my own order-block strategy from the study above. Each was backtested on a sample first, then on new data to rule out look-ahead bias, and then deployed as an always-on service on a rented cloud server.</p>
+        <p>The bots were stopped when the capital to run them ran out.</p>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Monte Carlo</p>
+        <h3>A career and relocation decision model</h3>
+        <p>1,004 career paths across countries, courses and roles, simulated over 30.9 million lives, with each input given a worst, base and best value and a source.</p>
+        <p>The first two runs looked too good: about a quarter of simulated finance careers reached a portfolio-manager seat. Both runs were rejected and the model was recalibrated to about one in eleven before any ranking was read. Eight automated checks guard it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ops">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Before the research</p>
+      <h2>Paid to answer questions with data</h2>
+      <p class="lede">Operations is where the habit of checking a number before acting on it started. Three examples.</p>
+    </div>
+    <div class="trio">
+      <div class="panel">
+        <p class="eyebrow">Shake Shack · 2025</p>
+        <h3>The stock loss that wasn't</h3>
+        <p>A stock count came in about £4,000 down. Comparing it period on period showed most of the swing reversed a gain from the previous period, caused by a stock-system outage. Net across both periods the variance was under £40, and one product line carried the real loss. That line became the investigation.</p>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Greggs · 2022 to 2024</p>
+        <h3>A rota built from the sales curve</h3>
+        <p>Research for my MBA dissertation traced lost sales to thin cover at peak and over-production early in the day. A third person at peak, production reset to the hourly sales pattern and ordering to demand followed. Sales rose 20% and waste fell 30% with no extra resources.</p>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Manufacturing · 2018 to 2021</p>
+        <h3>Weekly KPIs for eight products</h3>
+        <p>Performance reports for eight product lines shaped planning across a 33-person plant. Over FY2020, labour cost fell 9%, output rose 4% and revenue grew 11%. Complaints from business customers fell by two thirds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Your brief, my evidence</p>
+      <h2>The role, line by line</h2>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>The role asks for</th><th>Where to see it</th></tr></thead>
+        <tbody>
+          <tr><td>Strategies taken from hypothesis to live deployment</td><td>The four bots, sample to new data to a live server. The order-block strategy, backtest to 93 live trades.</td></tr>
+          <tr><td>Quantifying why simulated and live results differ</td><td>Backtest against live with a confidence interval (order-block study). Costs alone moved identical trades 82R apart (gold study).</td></tr>
+          <tr><td>Trade-level analysis of where returns are made and lost</td><td>Ten trades carrying 40% of a result; random-entry benchmarks; stop-outs that recovered within three days.</td></tr>
+          <tr><td>Out-of-sample testing and controls for overfitting</td><td>White's Reality Check, sealed eras and markets, multiple-testing correction, a post-hoc check flagged as post-hoc.</td></tr>
+          <tr><td>A material decision taken on your analysis, with a known outcome</td><td>The stock-variance investigation and the Greggs rota, both under "Before the research".</td></tr>
+          <tr><td>Something substantial you started yourself</td><td>Every study, bot and model on this page. None of it was assigned or paid for.</td></tr>
+          <tr><td>Reporting findings that contradict your earlier position</td><td>The three killed ideas; a published strategy that lost money once coded; a narrow pass that was not accepted.</td></tr>
+          <tr><td>Technical results explained to a non-specialist</td><td>Both full reports translate every term the first time it appears.</td></tr>
+          <tr><td>A degree with quantitative content</td><td>B.Tech in Mechanical Engineering; MBA; quantitative finance certificate in progress.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="habits">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Working habits</p>
+      <h2>Six rules every study follows</h2>
+    </div>
+    <div class="habits">
+      <div class="habit" tabindex="0"><span class="k">01</span><h3>Benchmark against random first</h3><p>An entry rule has to beat random entries on the same days before anything else is asked of it.</p></div>
+      <div class="habit" tabindex="0"><span class="k">02</span><h3>Seal the test data</h3><p>Held-out data is opened once. A second look turns it into training data.</p></div>
+      <div class="habit" tabindex="0"><span class="k">03</span><h3>Count every try</h3><p>After 140 versions, the bar is the luckiest of 140, and zero stops being the comparison.</p></div>
+      <div class="habit" tabindex="0"><span class="k">04</span><h3>Costs before conclusions</h3><p>Fees, spread and funding go in before any result is read. They decide more than the signal often does.</p></div>
+      <div class="habit" tabindex="0"><span class="k">05</span><h3>Publish the failure</h3><p>XRP failed the trend rule, and the report shows it on the results page next to the passes.</p></div>
+      <div class="habit" tabindex="0"><span class="k">06</span><h3>Write for the decision-maker</h3><p>A result is finished when someone without a quant background can act on it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap plan">
+    <div class="sec-head">
+      <p class="eyebrow">First 90 days</p>
+      <h2>Learn the live book before adding to it</h2>
+    </div>
+    <div class="plan-bar" aria-hidden="true"><span></span></div>
+    <div class="plan-cols">
+      <div><p class="eyebrow">Days 1 to 30</p><h3>Rebuild and reconcile</h3><p>Learn the platform and the data. Rebuild one live strategy's backtest and match it trade by trade against live fills, so the gap between simulation and execution has a number.</p></div>
+      <div><p class="eyebrow">Days 31 to 60</p><h3>Attribute</h3><p>Trade-level attribution across the live strategies: where returns come from, and where costs, liquidity or execution take them back. Each fix ranked by its expected impact.</p></div>
+      <div><p class="eyebrow">Days 61 to 90</p><h3>One new strategy, end to end</h3><p>One hypothesis through the full path, with the test written down before the data is opened. The result goes to the Managing Director with its impact, its risks and a recommendation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap duo">
+    <div class="panel">
+      <p class="eyebrow">Methods and tools</p>
+      <div class="chips">
+        <span class="chip">Random-timing benchmarks</span><span class="chip">White's Reality Check</span><span class="chip">Out-of-sample sealing</span><span class="chip">Multiple-testing correction</span><span class="chip">Monte Carlo resampling</span><span class="chip">Bootstrap confidence intervals</span><span class="chip">Parameter-stability tests</span><span class="chip">Cost and fee modelling</span>
+      </div>
+      <div class="chips">
+        <span class="chip">Python (pandas, NumPy)</span><span class="chip">TradingView and Pine Script</span><span class="chip">Excel</span><span class="chip">Power BI</span>
+      </div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Qualifications</p>
+      <ul class="quals">
+        <li><b>MBA, Aston University</b><span>UK</span></li>
+        <li><b>B.Tech, Mechanical Engineering</b><span>India</span></li>
+        <li><b>Certificate in Quantitative Finance &amp; Risk Management (IIQF)</b><span>finishing Nov 2026</span></li>
+        <li><b>GMAT 690, Quant 50 of 51</b><span>86th percentile</span></li>
+        <li><b>CAT: Quantitative Aptitude 96th percentile, overall 94th</b><span>India</span></li>
+        <li><b>BCS Business Analysis, Foundation and Practitioner</b><span>UK</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions you might have</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Why Quant Lab?</summary>
+        <div class="ans">
+          <p>The role owns a strategy from the first hypothesis to live trading, with no layer between the analyst and the decision. That is the loop these studies have run on a smaller scale, without the capital or the execution behind them.</p>
+          <p>Quant Lab's own filter, where only the strongest risk-adjusted strategies reach live capital, matches how my studies end. Most of my findings have overturned an earlier view of mine, which is the kind of work the role describes.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What will I bring with me?</summary>
+        <div class="ans"><ul>
+          <li><b>Test design:</b> random benchmarks, sealed data and corrections for searching, set up before results are seen.</li>
+          <li><b>Cost realism:</b> venue-by-venue fee and spread models, applied before a result is read.</li>
+          <li><b>Trade-level analysis:</b> streak and drawdown distributions by reshuffling, concentration in a few trades, slices tested for significance.</li>
+          <li><b>Live discipline:</b> bots run as always-on services, and a hand-traded strategy tracked against its own backtest.</li>
+          <li><b>Operating rhythm:</b> eight years of weekly numbers reported to someone who acted on them.</li>
+          <li><b>Plain writing:</b> reports that explain every term for a reader outside the field.</li>
+        </ul></div>
+      </details>
+      <details>
+        <summary>How long have I been trading?</summary>
+        <div class="ans"><p>Since 2023. In September 2026 I passed Phase 1 of a $10,000 two-phase prop challenge, +8.3% over five trades. The 93 live trades on this page were on prop-challenge capital.</p></div>
+      </details>
+      <details>
+        <summary>Visa, relocation and start date</summary>
+        <div class="ans"><p>I would join on the UAE employment visa that comes with the role. I will relocate to Dubai full-time and can start immediately.</p></div>
+      </details>
+      <details>
+        <summary>Why this move now?</summary>
+        <div class="ans"><p>Because each step should be bigger than the last. The research has reached the point where it needs real capital, real execution data and a decision-maker who expects to be told when an idea fails.</p></div>
+      </details>
+      <details>
+        <summary>What do the test scores mean?</summary>
+        <div class="ans">
+          <p><b>GMAT:</b> the Quant section of the classic GMAT is scored from 6 to 51, and my 50 was one point below the maximum. It reads as the 86th percentile only because so many test-takers score high in Quant. Overall 690.</p>
+          <p><b>CAT:</b> the entrance exam for India's Institutes of Management, taken by around 200,000 candidates a year. Quantitative Aptitude 96th percentile, 94th overall.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Languages</summary>
+        <div class="ans"><p>English, Hindi and Gujarati.</p></div>
+      </details>
+      <details>
+        <summary>Can I read the full reports?</summary>
+        <div class="ans"><p>Yes. <a href="https://urvish-portfolio.github.io/quant-lab/trend-rule-report.pdf" target="_blank" rel="noopener">The trend-rule report</a> covers all five validation tests and every trade. <a href="https://urvish-portfolio.github.io/quant-lab/stop-loss-report.pdf" target="_blank" rel="noopener">The stop-loss report</a> covers all 500 versions and the limits of the test.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap" style="display:grid;gap:16px">
+    <p class="eyebrow">Thank you for reading</p>
+    <h2>I would like to bring this way of working to Quant Lab's research.</h2>
+    <div class="contact" style="margin-top:4px"><span>urvish.mb@gmail.com</span><span>+91 99988 28555</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">Personal page. Not affiliated with or endorsed by any employer named here. Research results are personal studies, not investment advice.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  function s(tag,attrs,text){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e;}
+  var css=getComputedStyle(document.documentElement);
+  function v(n){return css.getPropertyValue(n).trim();}
+  var C={azure:v('--azure'),gold:v('--gold'),kill:v('--kill'),ok:v('--ok'),dim:v('--dim'),muted:v('--muted'),line:v('--line-soft'),text:v('--text'),bg:v('--bg')};
+  var MONO=v('--f-mono');
+
+  /* pipeline rows: stop index 0..4 */
+  var STUDIES=[
+    {id:'s-ibs',name:'US equity reversal',note:'Narrow pass, leans on 2020',stop:3,k:'open'},
+    {id:'s-trend',name:'Bitcoin trend rule',note:'Passed 5 validation tests',stop:3,k:'ok'},
+    {id:'s-stop',name:'Stop-loss study',note:'Finding, one market',stop:2,k:'ok'},
+    {id:'s-obfvg',name:'Order block, backtest vs live',note:'93 live trades, unproven',stop:4,k:'open'},
+    {id:'s-gold',name:'Gold, 189 trades',note:'One regime, discretionary',stop:3,k:'open'},
+    {id:'s-killed',name:'Candle patterns',note:'0 of ~5,400 setups survived costs',stop:2,k:'kill'},
+    {id:'s-killed',name:'200 EMA rejection',note:'No stable settings',stop:2,k:'kill'},
+    {id:'s-killed',name:'Value-area levels',note:'Ranked last of three',stop:2,k:'kill'}
+  ];
+  var rows=document.getElementById('pipe-rows');
+  STUDIES.forEach(function(st){
+    var lab=document.createElement('div');lab.className='pipe-label';
+    lab.innerHTML='<a href="#'+st.id+'"></a><small></small>';
+    lab.querySelector('a').textContent=st.name;lab.querySelector('small').textContent=st.note;
+    var tr=document.createElement('div');tr.className='track '+st.k;
+    tr.setAttribute('aria-label',st.name+': stopped at gate '+(st.stop+1)+' of 5');
+    tr.innerHTML='<span class="rail"></span><span class="run" style="width:'+(st.stop*20)+'%"></span>';
+    for(var g=0;g<5;g++){var d=document.createElement('i');if(g<st.stop)d.className='on';if(g===st.stop)d.className='stop';tr.appendChild(d);}
+    rows.appendChild(lab);rows.appendChild(tr);
+  });
+
+  /* rings at rest = final */
+  document.querySelectorAll('.ring .fill').forEach(function(c){
+    var L=2*Math.PI*27;c.style.strokeDasharray=L;c.style.strokeDashoffset=L*(1-parseFloat(c.dataset.frac));c.dataset.len=L;
+  });
+
+  /* charts */
+  function axisText(svg,x,y,t,anchor,fill){svg.appendChild(s('text',{x:x,y:y,'text-anchor':anchor||'middle',fill:fill||C.dim,'font-size':11,'font-family':MONO},t));}
+
+  // IBS yearly bars (SPY, bp per trade after costs, 2016-2026)
+  (function(){
+    var D=[[2016,18.8],[2017,15.7],[2018,-23.6],[2019,-2.2],[2020,50.8],[2021,2.7],[2022,12.3],[2023,-0.5],[2024,19.4],[2025,7.2],[2026,3.2]];
+    var W=520,H=260,L=44,R=12,T=16,B=34,min=-30,max=60;
+    var svg=s('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'SPY average return per trade by year, 2016 to 2026'});
+    function Y(val){return T+(max-val)/(max-min)*(H-T-B);}
+    [-30,0,30,60].forEach(function(t){svg.appendChild(s('line',{x1:L,x2:W-R,y1:Y(t),y2:Y(t),stroke:C.line,'stroke-width':1}));axisText(svg,L-8,Y(t)+4,(t>0?'+':'')+t+' bp','end');});
+    var bw=(W-L-R)/D.length;
+    D.forEach(function(d,i){
+      var x=L+i*bw+bw*0.18,w=bw*0.64,y0=Y(0),y1=Y(d[1]);
+      var col=d[0]===2020?C.gold:(d[1]>=0?C.azure:C.kill);
+      svg.appendChild(s('rect',{class:'bar',x:x,y:Math.min(y0,y1),width:w,height:Math.max(1,Math.abs(y1-y0)),fill:col,rx:2}));
+      axisText(svg,x+w/2,H-14,"'"+String(d[0]).slice(2));
+    });
+    svg.appendChild(s('line',{x1:L,x2:W-R,y1:Y(10.09),y2:Y(10.09),stroke:C.text,'stroke-width':1,'stroke-dasharray':'4 4'}));
+    axisText(svg,W-R,Y(10.09)-6,'average +10.1 bp','end',C.text);
+    document.getElementById('ch-ibs').appendChild(svg);
+  })();
+
+  // Stop sweep (log x)
+  (function(){
+    var P=[[0.5,27.0],[0.7,19.0],[0.89,11.0],[1.09,4.0],[1.29,13.0],[1.48,6.0],[1.68,-1.0],[1.87,-7.0],[2.07,318.0],[2.27,293.0],[2.46,269.0],[2.66,247.0],[2.86,226.0],[3.05,216.0],[3.25,197.0],[3.45,192.0],[3.64,176.0],[3.84,160.0],[4.04,145.0],[4.23,135.0],[4.43,122.0],[4.62,167.0],[4.82,201.0],[5.02,186.0],[5.21,453.0],[5.41,451.0],[5.61,426.0],[5.8,403.0],[6.0,380.0],[6.2,367.0],[6.39,413.0],[6.59,392.0],[6.78,2037.0],[6.98,2139.0],[7.18,2060.0],[7.37,2142.0],[7.57,2067.0],[7.77,1995.0],[7.96,2144.0],[8.16,2073.0],[8.36,2004.0],[8.55,1938.0],[8.75,1873.0],[8.94,1850.0],[9.14,1792.0],[9.34,1736.0],[9.53,1681.0],[9.73,1628.0],[9.93,1576.0],[10.12,1525.0],[10.32,1476.0],[10.52,1429.0],[10.71,1382.0],[10.91,1337.0],[11.11,1369.0],[11.3,1328.0],[11.5,1287.0],[11.69,1248.0],[11.89,1209.0],[12.09,1172.0],[12.28,1135.0],[12.48,1100.0],[12.68,1065.0],[12.87,1032.0],[13.07,999.0],[13.27,1004.0],[13.46,975.0],[13.66,946.0],[13.85,918.0],[14.05,940.0],[14.25,914.0],[14.44,1016.0],[14.64,991.0],[14.84,966.0],[15.03,942.0],[15.23,918.0],[15.43,895.0],[15.62,872.0],[15.82,891.0],[16.02,870.0],[16.21,850.0],[16.41,830.0],[16.6,811.0],[16.8,792.0],[17.0,773.0],[17.19,754.0],[17.39,736.0],[17.59,719.0],[17.78,721.0],[17.98,705.0],[18.18,702.0],[18.37,689.0],[18.57,675.0],[18.76,662.0],[18.96,650.0],[19.16,637.0],[19.35,625.0],[19.55,612.0],[19.75,600.0],[19.94,615.0],[20.14,605.0],[20.34,594.0],[20.53,644.0],[20.73,635.0],[20.92,625.0],[21.12,617.0],[21.32,608.0],[21.51,599.0],[21.71,590.0],[21.91,582.0],[22.1,584.0],[22.3,577.0],[22.5,571.0],[22.69,564.0],[22.89,557.0],[23.09,550.0],[23.28,544.0],[23.48,537.0],[23.67,531.0],[23.87,524.0],[24.07,571.0],[24.26,566.0],[24.46,561.0],[24.66,556.0],[24.85,550.0]];
+    var W=520,H=280,L=52,R=14,T=16,B=36,xmin=0.5,xmax=25,ymax=2400;
+    var svg=s('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Total return by stop distance across 500 versions'});
+    function X(p){return L+(Math.log(p)-Math.log(xmin))/(Math.log(xmax)-Math.log(xmin))*(W-L-R);}
+    function Y(r){return T+(ymax-r)/ymax*(H-T-B);}
+    svg.appendChild(s('rect',{x:X(1.2365),y:T,width:X(1.9238)-X(1.2365),height:H-T-B,fill:C.kill,opacity:0.38}));
+    [0,600,1200,1800,2400].forEach(function(t){svg.appendChild(s('line',{x1:L,x2:W-R,y1:Y(t),y2:Y(t),stroke:C.line,'stroke-width':1}));axisText(svg,L-8,Y(t)+4,t+'%','end');});
+    [0.5,1,2,5,10,25].forEach(function(t){axisText(svg,X(t),H-14,t+'%');});
+    svg.appendChild(s('line',{x1:L,x2:W-R,y1:Y(647.7),y2:Y(647.7),stroke:C.muted,'stroke-width':1,'stroke-dasharray':'5 4'}));
+    axisText(svg,W-R,Y(647.7)-6,'no stop +648%','end',C.muted);
+    var d=P.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1);}).join(' ');
+    svg.appendChild(s('path',{class:'line',d:d,fill:'none',stroke:C.azure,'stroke-width':2,'stroke-linejoin':'round'}));
+    [[2.022,325,'2% stop'],[7.8156,2198,'best 7.8%']].forEach(function(m){
+      svg.appendChild(s('circle',{cx:X(m[0]),cy:Y(m[1]),r:4.5,fill:C.gold}));
+      axisText(svg,X(m[0])+(m[0]<5?8:-8),Y(m[1])-8,m[2],m[0]<5?'start':'end',C.gold);
+    });
+    document.getElementById('ch-stop').appendChild(svg);
+  })();
+
+  // OB FVG CI
+  (function(){
+    var W=520,H=150,L=110,R=20,T=18,B=34,min=-0.4,max=1.6;
+    var svg=s('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Backtest and live expectancy per trade with confidence interval'});
+    function X(x){return L+(x-min)/(max-min)*(W-L-R);}
+    [-0.4,0,0.4,0.8,1.2,1.6].forEach(function(t){svg.appendChild(s('line',{x1:X(t),x2:X(t),y1:T,y2:H-B,stroke:t===0?C.muted:C.line,'stroke-width':1}));axisText(svg,X(t),H-14,(t>0?'+':'')+t+'R');});
+    var y1=T+22,y2=T+70;
+    axisText(svg,L-12,y1+4,'Backtest (100)','end',C.text);
+    svg.appendChild(s('circle',{cx:X(0.624),cy:y1,r:6,fill:C.azure}));
+    axisText(svg,X(0.624),y1-11,'+0.62R','middle',C.azure);
+    axisText(svg,L-12,y2+4,'Live (93)','end',C.text);
+    svg.appendChild(s('line',{x1:X(0.28),x2:X(1.44),y1:y2,y2:y2,stroke:C.gold,'stroke-width':3,'stroke-linecap':'round'}));
+    svg.appendChild(s('circle',{cx:X(0.86),cy:y2,r:6,fill:C.gold}));
+    axisText(svg,X(0.86),y2-11,'+0.86R','middle',C.gold);
+    document.getElementById('ch-ci').appendChild(svg);
+  })();
+
+  // Gold venues
+  (function(){
+    var D=[['Prop-firm MT5 pricing',191.2,C.azure],['Bybit fees',108.6,C.gold]];
+    var W=520,H=130,L=150,R=60,T=14,max=200;
+    var svg=s('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Same 189 trades under two cost models'});
+    D.forEach(function(d,i){
+      var y=T+i*52,w=(W-L-R)*d[1]/max;
+      axisText(svg,L-12,y+22,d[0],'end',C.text);
+      svg.appendChild(s('rect',{class:'hbar',x:L,y:y+6,width:w,height:26,rx:4,fill:d[2]}));
+      axisText(svg,L+w+8,y+24,'+'+Math.round(d[1])+'R','start',C.text);
+    });
+    document.getElementById('ch-gold').appendChild(svg);
+  })();
+
+  /* motion: everything above is the resting state; motion only replays it as sections enter */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // route highlighting (class toggles, works without GSAP too)
+  var steps=[].slice.call(document.querySelectorAll('.route-step'));
+  var items=[].slice.call(document.querySelectorAll('#route-list li'));
+  function light(n){steps.forEach(function(st,i){st.classList.toggle('active',i===n);});items.forEach(function(li,i){li.classList.toggle('lit',i<=n);});}
+  light(0);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)light(+e.target.dataset.step);});},{rootMargin:'-45% 0px -45% 0px'});
+    steps.forEach(function(st){io.observe(st);});
+  }
+
+  if(reduce||!window.gsap||!window.ScrollTrigger)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var ease='power3.out';
+
+  function inView(el){var r=el.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0;}
+  function once(el,fn){if(inView(el))return;ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:fn});}
+
+  // count-ups
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    once(el,function(){var end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.1,ease:ease,onUpdate:function(){el.textContent=Math.round(o.v).toLocaleString('en-GB');}});});
+  });
+  // rings
+  document.querySelectorAll('.ring .fill').forEach(function(c){
+    once(c.closest('.stat'),function(){var L=+c.dataset.len;gsap.fromTo(c,{strokeDashoffset:L},{strokeDashoffset:L*(1-parseFloat(c.dataset.frac)),duration:1.2,ease:ease});});
+  });
+  // pipeline runs
+  var pipe=document.querySelector('.pipe');
+  once(pipe,function(){gsap.fromTo('.track .run',{scaleX:0},{scaleX:1,duration:0.9,ease:ease,stagger:0.08});gsap.fromTo('.track i.stop',{scale:0.6},{scale:1,duration:0.5,ease:'back.out(1.6)',stagger:0.08,delay:0.4});});
+  // chart bars
+  document.querySelectorAll('#ch-ibs, #ch-gold').forEach(function(ch){
+    once(ch,function(){gsap.fromTo(ch.querySelectorAll('.bar'),{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:0.7,ease:ease,stagger:0.04});gsap.fromTo(ch.querySelectorAll('.hbar'),{scaleX:0,transformOrigin:'0% 50%'},{scaleX:1,duration:0.8,ease:ease,stagger:0.1});});
+  });
+  // 90-day bar
+  var pb=document.querySelector('.plan-bar span');
+  once(pb,function(){gsap.fromTo(pb,{scaleX:0},{scaleX:1,duration:1.4,ease:'power2.inOut'});});
+  // case entrances: gentle, from a visible state
+  document.querySelectorAll('.case,.panel,.habit').forEach(function(el){
+    once(el,function(){gsap.fromTo(el,{y:14,opacity:0.6,filter:'blur(2px)'},{y:0,opacity:1,filter:'blur(0px)',duration:0.5,ease:ease,clearProps:'filter,transform,opacity'});});
+  });
+})();
+</script>
+
+</body>
+</html>
